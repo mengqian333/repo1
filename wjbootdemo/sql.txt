@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `book`;
+CREATE TABLE `book` (
+  `book_id` integer(11) NOT NULL AUTO_INCREMENT,
+  `book_name` varchar(20) DEFAULT NULL,
+  `book_author` varchar(20) DEFAULT NULL,
+  `book_price` double DEFAULT NULL,
+ PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;

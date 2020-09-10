@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.dao.BookDao"> <!-- src包下的-->
+
+    <!-- 新增图书-->
+    <insert id="insert" parameterType="BookBean" >
+        INSERT INTO book(book_name,book_author,book_price) value (#{book_name},#{book_author},#{book_price});
+    </insert>
+
+    <!--  根据id查找图书-->
+    <select id="select" parameterType="int" resultType="BookBean">
+        select * from book where book_id = #{book_id};
+    </select>
+
+    <!-- 查找所有图书-->
+    <select id="selectall" resultType="BookBean">
+        select * from book
+    </select>
+
+    <!-- 根据id删除图书-->
+    <delete id="delect" parameterType="int">
+        delete from book where book_id =#{book_id};
+    </delete>
+
+    <!-- 根据id更新图书-->
+    <update id="update" parameterType="BookBean">
+        UPDATE book
+        set book_name =#{book_name},
+            book_autor =#{book_author},
+            book_price=#{book_price}
+            where id=#{book_id};
+    </update>
+
+</mapper>

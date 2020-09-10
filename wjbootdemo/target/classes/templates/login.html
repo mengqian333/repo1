@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+</head>
+<body>
+
+    <form role="form" action = "/login/do" method="post">
+    账号：<input type="text" id="name" name = "name"> <br>
+    密码：<input type="password" id = "password" name = "password"> <br>
+
+        <div class="form-group has-feedback">
+            <input id="checkCode" name="checkCode" type="text"
+                   placeholder="验证码" autocomplete="off"  required="required"
+                   class="form-control" data-parsley-required-message="请输入验证码！"/>
+            <td><img src="/code" alt="验证码" title="点击更换" onclick="this.src='/code?'+Math.random()"/></td>
+        </div>
+    <input type="submit" id = "login" value = "登陆">
+    </form>
+
+    <a href="/register">注册</a>
+    <br> <br> <br>
+
+</body>
+</html>
